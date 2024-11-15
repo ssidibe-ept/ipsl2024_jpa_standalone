@@ -9,6 +9,7 @@
         <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
         <class>com.galgit.healthcare.entities.Etudiant</class>
         <class>com.galgit.healthcare.entities.Carte</class>
+        <class>com.galgit.healthcare.entities.Filiere</class>
 
         <!-- Paramètres de connexion à la base de données -->
         <properties>

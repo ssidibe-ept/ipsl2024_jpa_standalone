@@ -25,6 +25,9 @@ public class Etudiant implements Serializable {
     @JoinColumn(nullable = false)
     private Carte carte;
 
+    @ManyToOne
+    private Filiere filiere;
+
     public String getAdresse() {
         return adresse;
     }
@@ -73,6 +76,22 @@ public class Etudiant implements Serializable {
         this.telephone = telephone;
     }
 
+
+    public Carte getCarte() {
+        return carte;
+    }
+
+    public void setCarte(Carte carte) {
+        this.carte = carte;
+    }
+
+    public Filiere getFiliere() {
+        return filiere;
+    }
+
+    public void setFiliere(Filiere filiere) {
+        this.filiere = filiere;
+    }
 
     @Override
     public String toString() {

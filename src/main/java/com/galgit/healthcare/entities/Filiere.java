@@ -2,12 +2,18 @@ package com.galgit.healthcare.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+
+import java.util.List;
 
 @Entity
 public class Filiere {
     @Id
     private String code;
     private String nom;
+
+    @OneToMany(mappedBy ="filiere" )
+    private List<Etudiant> etudiants;
 
     public String getCode() {
         return code;
