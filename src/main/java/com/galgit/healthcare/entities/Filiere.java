@@ -1,6 +1,7 @@
 package com.galgit.healthcare.entities;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 
@@ -12,7 +13,7 @@ public class Filiere {
     private String code;
     private String nom;
 
-    @OneToMany(mappedBy ="filiere" )
+    @OneToMany(mappedBy ="filiere", fetch = FetchType.EAGER)
     private List<Etudiant> etudiants;
 
     public String getCode() {

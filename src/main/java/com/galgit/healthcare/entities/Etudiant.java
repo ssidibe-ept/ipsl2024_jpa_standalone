@@ -8,6 +8,7 @@ import java.util.List;
 @Entity
 public class Etudiant implements Serializable {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     private String nom;
@@ -22,15 +23,23 @@ public class Etudiant implements Serializable {
     @Column(length = 50, nullable = false, unique = true)
     private String email;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(nullable = false)
     private Carte carte;
 
     @ManyToOne
     private Filiere filiere;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     private List<CoursCertification> certifications;
+
+    public Etudiant(){}
+
+    public Etudiant(String prenom, String nom, String email) {
+        this.prenom = prenom;
+        this.nom = nom;
+        this.email = email;
+    }
 
     public String getAdresse() {
         return adresse;

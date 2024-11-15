@@ -1,9 +1,6 @@
 package com.galgit.healthcare.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 
 import java.util.List;
 
@@ -13,7 +10,7 @@ public class CoursCertification {
     private Integer id;
     private String nom;
 
-    @ManyToMany(mappedBy = "certifications")
+    @ManyToMany(mappedBy = "certifications", fetch = FetchType.EAGER)
     private List<Etudiant> etudiants;
 
 }
