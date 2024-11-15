@@ -9,7 +9,7 @@ public class MainModif {
     public static void main(String[] args) {
         EntityManagerFactory emf= Persistence.createEntityManagerFactory("ing2Pu");
         EntityManager em = emf.createEntityManager();
-
+ 
         int id=5;
         Etudiant e=em.find(Etudiant.class, id);
         System.out.println("etudiant dont l'id est "+id+" est "+e);
