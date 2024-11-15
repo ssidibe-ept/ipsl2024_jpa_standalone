@@ -3,6 +3,7 @@ package com.galgit.healthcare.entities;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 public class Etudiant implements Serializable {
@@ -27,6 +28,9 @@ public class Etudiant implements Serializable {
 
     @ManyToOne
     private Filiere filiere;
+
+    @ManyToMany
+    private List<CoursCertification> certifications;
 
     public String getAdresse() {
         return adresse;
